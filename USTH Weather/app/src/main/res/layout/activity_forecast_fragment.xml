@@ -2,11 +2,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
+    android:id="@+id/fragment_forecast"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ForecastFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,13 +45,11 @@
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
             android:paddingVertical="12dp">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytest1"
                     android:layout_width="0dp"
@@ -61,7 +58,6 @@
                     android:paddingVertical="15dp"
                     android:text="Monday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage1"
                     android:layout_width="37dp"
@@ -69,20 +65,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/cloudy" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Cloudy" />
-
                     <TextView
                         android:id="@+id/temperature1"
                         android:layout_width="match_parent"
@@ -90,15 +83,12 @@
                         android:layout_weight="1"
                         android:text="25°-30°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytext2"
                     android:layout_width="0dp"
@@ -107,7 +97,6 @@
                     android:paddingVertical="15dp"
                     android:text="Tuesday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage2"
                     android:layout_width="37dp"
@@ -115,36 +104,30 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/rainy_day" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Rainy" />
-
                     <TextView
                         android:id="@+id/temperature2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight= "1"
-                        android:text= "22°-29°" />
+                        android:layout_weight="1"
+                        android:text="22°-29°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytest3"
                     android:layout_width="0dp"
@@ -153,7 +136,6 @@
                     android:paddingVertical="15dp"
                     android:text="Wednesday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage3"
                     android:layout_width="37dp"
@@ -161,20 +143,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/rainy_day" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Rainy" />
-
                     <TextView
                         android:id="@+id/temperature3"
                         android:layout_width="match_parent"
@@ -182,15 +161,12 @@
                         android:layout_weight="1"
                         android:text="23°-29°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytext4"
                     android:layout_width="0dp"
@@ -199,7 +175,6 @@
                     android:paddingVertical="15dp"
                     android:text="Thursday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage4"
                     android:layout_width="37dp"
@@ -207,20 +182,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/cloudy" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Cloudy" />
-
                     <TextView
                         android:id="@+id/temperature4"
                         android:layout_width="match_parent"
@@ -228,15 +200,12 @@
                         android:layout_weight="1"
                         android:text="26°-30°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytext5"
                     android:layout_width="0dp"
@@ -245,7 +214,6 @@
                     android:paddingVertical="15dp"
                     android:text="Friday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage5"
                     android:layout_width="37dp"
@@ -253,20 +221,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/thunderstorm" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Storm" />
-
                     <TextView
                         android:id="@+id/temperature5"
                         android:layout_width="match_parent"
@@ -274,15 +239,12 @@
                         android:layout_weight="1"
                         android:text="20°-25°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytext6"
                     android:layout_width="0dp"
@@ -291,7 +253,6 @@
                     android:paddingVertical="15dp"
                     android:text="Saturday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage6"
                     android:layout_width="37dp"
@@ -299,20 +260,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/rainy_day" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Rainy" />
-
                     <TextView
                         android:id="@+id/temperature6"
                         android:layout_width="match_parent"
@@ -320,15 +278,12 @@
                         android:layout_weight="1"
                         android:text="22°-28°" />
                 </LinearLayout>
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#5403A9F4"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/daytext7"
                     android:layout_width="0dp"
@@ -337,7 +292,6 @@
                     android:paddingVertical="15dp"
                     android:text="Sunday"
                     android:textAlignment="center" />
-
                 <ImageView
                     android:id="@+id/weatherImage7"
                     android:layout_width="37dp"
@@ -345,20 +299,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitStart"
                     android:src="@drawable/rainy_day" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/weatherCond7"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Rainy" />
-
                     <TextView
                         android:id="@+id/temperature7"
                         android:layout_width="match_parent"
@@ -366,10 +317,7 @@
                         android:layout_weight="1"
                         android:text="21°-27°" />
                 </LinearLayout>
-
             </LinearLayout>
-
-
         </LinearLayout>
 
     </LinearLayout>
