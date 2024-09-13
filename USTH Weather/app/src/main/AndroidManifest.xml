@@ -13,6 +13,12 @@
         android:theme="@style/Theme.UsthWeather"
         tools:targetApi="31">
         <activity
+            android:name=".WeatherAndForecastPagerAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherAndForecastFragment"
+            android:exported="false" />
+        <activity
             android:name=".WeatherFragment"
             android:exported="false" />
         <activity
