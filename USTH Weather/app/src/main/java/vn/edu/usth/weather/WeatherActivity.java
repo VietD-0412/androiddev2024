@@ -54,23 +54,28 @@ public class WeatherActivity extends AppCompatActivity {
         super.onStart();
         Log.i("onStart", "onStart");
     }
+
     @Override
     public void onResume() {
         super.onResume();
         Log.i("onResume", "onResume");
     }
+
     @Override
     public void onPause() {
         super.onPause();
         Log.i("onPause", "onPause");
     }
+
     @Override
     public void onStop() {
         super.onStop();
         Log.i("onStop", "onStop");
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.i("onDestroy", "onDestroy");
     }
+}

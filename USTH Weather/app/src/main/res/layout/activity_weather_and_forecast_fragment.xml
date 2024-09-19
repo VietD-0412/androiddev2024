@@ -1,27 +1,442 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeatherAndForecastFragment">
-
+    android:id="@+id/fragment_weather_and_forecast"
+    tools:context=".WeatherAndForecastFragment"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/usth_header_height"
+        android:background="@color/dark_blue"
+        android:orientation="horizontal"
+        android:padding="@dimen/smol_pad">
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="@dimen/header_text_width"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="@string/header"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/header_text_size"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/header_padding_left"
+            android:paddingTop="@dimen/header_padding"
+            android:paddingBottom="@dimen/header_padding"
+            android:paddingRight="@dimen/header_padding" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/weather_layout_height"
+        android:layout_marginTop="@dimen/weather_margin_top"
+        android:layout_marginBottom="@dimen/margin_padding"
+        android:layout_marginLeft="@dimen/margin_padding"
+        android:layout_marginRight="@dimen/margin_padding"
+        android:padding="@dimen/margin_padding"
+        android:background="@color/light_green">
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_temp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/weather_text_size"
+            />
+        <TextView
+            android:id="@+id/weaCond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cloudy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/weather_text_size"
+            android:layout_marginTop="@dimen/weaCond_marginTop"
+            />
+        <TextView
+            android:id="@+id/locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/locate"
+            android:textColor="@color/black"
+            android:textSize="@dimen/weather_text_size"
+            android:layout_gravity="end"
+            />
+        <ImageView android:layout_width="@dimen/weather_img_layout" android:layout_height="@dimen/weather_img_layout"
+            android:layout_gravity="center"
+            android:src="@drawable/cloudy"/>
+    </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_padding"
+        android:paddingTop="@dimen/forecast_paddingTop">
 
-        <fragment
-            android:id="@+id/weatherFragment"
-            android:name="vn.edu.usth.weather.WeatherFragment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
 
-        <fragment
-            android:id="@+id/forecastFragment"
-            android:name="vn.edu.usth.weather.ForecastFragment"
+            <TextView
+                android:id="@+id/day1"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/monday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg1"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sun" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/sunny" />
+
+                <TextView
+                    android:id="@+id/temp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/temp1" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day2"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/tuesday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg2"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rain" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/rainy" />
+
+                <TextView
+                    android:id="@+id/temp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="24°C - 30°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day3"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/wednesday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg3"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/storm" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/stormy" />
+
+                <TextView
+                    android:id="@+id/temp3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="22°C - 23°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day4"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/thursday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg4"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rain" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/rainy" />
+
+                <TextView
+                    android:id="@+id/temp4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="22°C - 27°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day5"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/friday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg5"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cloudy" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/cloudy_with_a_chance_of_meatballs" />
+
+                <TextView
+                    android:id="@+id/temp5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="22°C - 30°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day6"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/saturday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg6"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sun" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/sunny" />
+
+                <TextView
+                    android:id="@+id/temp6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="24°C - 31°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forecast_height"
+            android:background="@color/light_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/day7"
+                android:layout_width="@dimen/daytxt_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingVertical="@dimen/daytxt_padding"
+                android:text="@string/sunday"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/weaImg7"
+                android:layout_width="@dimen/dayimg_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sun" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dayCond_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weaCond7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="@string/sunny" />
+
+                <TextView
+                    android:id="@+id/temp7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dayCond_padLeft"
+                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:textColor="@color/black"
+                    android:text="26°C - 33°C" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-</FrameLayout>
+
+</RelativeLayout>
