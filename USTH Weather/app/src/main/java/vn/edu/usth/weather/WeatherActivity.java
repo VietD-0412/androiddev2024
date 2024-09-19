@@ -7,49 +7,70 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager.widget.ViewPager;
-import androidx.fragment.app.FragmentPagerAdapter; // Add this import
 import android.util.Log;
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(
+                getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout.setupWithViewPager(pager);
+
+        /*
+        //Practical 3: add code
+        // Create a new Fragment to be placed in the activity l
         ForecastFragment firstFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_forecast, firstFragment).commit();
+        // Add the fragment to the 'container' FrameLayout
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.fragment_container, firstFragment).commit();
+        // Practical 6: add WeatherFragment
         WeatherFragment secondFragment = new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_weather, secondFragment).commit();
-        Log.i("create", "onCreate called");
-
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        WeatherAndForecastPagerAdapter adapter = new WeatherAndForecastPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPager.setAdapter(adapter);
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.fragment_weather, secondFragment).commit();
+        */
+        Log.i("onCreate", "onCreate");
     }
 
+    // Practical 2
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
-        Log.i("start", "onStart called");
+        Log.i("onStart", "onStart");
     }
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        Log.i("resume", "onResume called");
+        Log.i("onResume", "onResume");
     }
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
-        Log.i("pause", "onPause called");
+        Log.i("onPause", "onPause");
     }
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
-        Log.i("stop", "onStop called");
+        Log.i("onStop", "onStop");
     }
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
-        Log.i("destroy", "onDestroy called");
+        Log.i("onDestroy", "onDestroy");
     }
-}
