@@ -2,6 +2,7 @@ package vn.edu.usth.weather;
 
 import android.content.pm.PackageManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.preference.PreferenceActivity;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -25,6 +27,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -69,13 +72,14 @@ public class WeatherActivity extends AppCompatActivity {
         Log.i("onCreate", "onCreate");
     }
 
-    /*
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void extractAndPlayMusic() {
         try {
             // Copy to ext storage
             InputStream inputStream = getResources().openRawResource(R.raw.music);
             File musicFile = new File(getExternalFilesDir(null), "music.mp3");
-            OutputStream outputStream = new FileOutputStream(musicFile);
+            OutputStream outputStream = Files.newOutputStream(musicFile.toPath());
 
             byte[] buffer = new byte[1024];
             int length;
@@ -96,7 +100,7 @@ public class WeatherActivity extends AppCompatActivity {
         } catch(Exception e){
             e.printStackTrace();
         }
-    } */
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

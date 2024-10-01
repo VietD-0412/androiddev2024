@@ -5,39 +5,63 @@
     android:layout_height="match_parent"
     android:id="@+id/fragment_weather_and_forecast"
     tools:context=".WeatherAndForecastFragment"
-    android:background="@color/white">
-
-    <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/weather_layout_height"
-        android:layout_margin="@dimen/margin_padding"
-        android:padding="@dimen/margin_text_padding"
-        android:background="@drawable/frame" >
+    android:background="#F8F8F8">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140px"
+        android:background="#3f51b5"
+        android:orientation="horizontal"
+        android:padding="4px">
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="180px"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="USTH Weather"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="65px"
+            android:textStyle="bold"
+            android:paddingLeft="36px"
+            android:paddingTop="22px"
+            android:paddingBottom="22px"
+            android:paddingRight="22px" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="600px"
+        android:layout_marginTop="185px"
+        android:layout_marginBottom="45px"
+        android:layout_marginLeft="45px"
+        android:layout_marginRight="45px"
+        android:padding="45px"
+        android:background="#B0E57C">
         <TextView
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/weather_temp"
+            android:text="12°C"
             android:textColor="@color/black"
-            android:textSize="@dimen/weather_text_size"
+            android:textSize="55px"
             />
         <TextView
             android:id="@+id/weaCond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cloudy"
+            android:text="Cloudy"
             android:textColor="@color/black"
-            android:textSize="@dimen/weather_text_size"
-            android:layout_marginTop="@dimen/weaCond_marginTop"
+            android:textSize="55px"
+            android:layout_marginTop="55px"
             />
         <TextView
             android:id="@+id/locate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/locate"
+            android:text="Paris"
             android:textColor="@color/black"
-            android:textSize="@dimen/weather_text_size"
+            android:textSize="55px"
             android:layout_gravity="end"
             />
-        <ImageView android:layout_width="@dimen/weather_img_layout" android:layout_height="@dimen/weather_img_layout"
+        <ImageView android:layout_width="500px" android:layout_height="500px"
             android:layout_gravity="center"
             android:src="@drawable/cloudy"/>
     </FrameLayout>
@@ -45,35 +69,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/margin_padding"
-        android:paddingTop="@dimen/forecast_paddingTop">
+        android:paddingHorizontal="45px"
+        android:paddingTop="835px">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day1"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/monday"
+                android:paddingVertical="38px"
+                android:text="Mon"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg1"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sun" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -83,49 +107,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/sunny" />
+                    android:text="Sunny" />
 
                 <TextView
                     android:id="@+id/temp1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/temp1" />
+                    android:text="24°C - 31°C" />
             </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day2"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/tuesday"
+                android:paddingVertical="38px"
+                android:text="Tue"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg2"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/rainy_day" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -135,18 +159,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/rainy" />
+                    android:text="Rainy" />
 
                 <TextView
                     android:id="@+id/temp2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="24°C - 30°C" />
             </LinearLayout>
@@ -154,30 +178,30 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day3"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/wednesday"
+                android:paddingVertical="38px"
+                android:text="Wed"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg3"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/thunderstorm" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -187,18 +211,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/stormy" />
+                    android:text="Huge Storm" />
 
                 <TextView
                     android:id="@+id/temp3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="22°C - 23°C" />
             </LinearLayout>
@@ -206,30 +230,30 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day4"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/thursday"
+                android:paddingVertical="38px"
+                android:text="Thu"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg4"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/rainy_day" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -239,18 +263,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/rainy" />
+                    android:text="Small Rain" />
 
                 <TextView
                     android:id="@+id/temp4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="22°C - 27°C" />
             </LinearLayout>
@@ -258,30 +282,30 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day5"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/friday"
+                android:paddingVertical="38px"
+                android:text="Fri"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg5"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cloudy" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -291,18 +315,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/cloudy_with_a_chance_of_meatballs" />
+                    android:text="Cloudy Meatballs" />
 
                 <TextView
                     android:id="@+id/temp5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="22°C - 30°C" />
             </LinearLayout>
@@ -310,30 +334,30 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day6"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/saturday"
+                android:paddingVertical="38px"
+                android:text="Sat"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg6"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sun" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -343,18 +367,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/sunny" />
+                    android:text="Sunny" />
 
                 <TextView
                     android:id="@+id/temp6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="24°C - 31°C" />
             </LinearLayout>
@@ -362,30 +386,30 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/forecast_height"
-            android:background="@color/light_blue"
+            android:layout_height="130px"
+            android:background="#5403A9F4"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/day7"
-                android:layout_width="@dimen/daytxt_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/daytxt_padding"
-                android:text="@string/sunday"
+                android:paddingVertical="38px"
+                android:text="Sun"
                 android:textColor="@color/black"
                 android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/weaImg7"
-                android:layout_width="@dimen/dayimg_width"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sun" />
 
             <LinearLayout
-                android:layout_width="@dimen/dayCond_width"
+                android:layout_width="370px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -395,18 +419,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
-                    android:text="@string/sunny" />
+                    android:text="Sunny" />
 
                 <TextView
                     android:id="@+id/temp7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingLeft="@dimen/dayCond_padLeft"
-                    android:paddingTop="@dimen/dayCond_padTop"
+                    android:paddingLeft="30px"
+                    android:paddingTop="5px"
                     android:textColor="@color/black"
                     android:text="26°C - 33°C" />
             </LinearLayout>
