@@ -1,11 +1,18 @@
 package vn.edu.usth.weather;
 
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.pm.PackageManager;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.os.Environment;
 import android.preference.PreferenceActivity;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -73,34 +80,73 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.Q)
     private void extractAndPlayMusic() {
         try {
-            // Copy to ext storage
+            // Get a write request for the music file
+            Uri audioFileUri = createWriteRequest();
+            if (audioFileUri == null) {
+                return;
+            }
+
+            // Copy the music file to shared storage
             InputStream inputStream = getResources().openRawResource(R.raw.music);
-            File musicFile = new File(getExternalFilesDir(null), "music.mp3");
-            OutputStream outputStream = Files.newOutputStream(musicFile.toPath());
+            OutputStream outputStream = getContentResolver().openOutputStream(audioFileUri);
 
             byte[] buffer = new byte[1024];
             int length;
-            while ((length = inputStream.read(buffer)) > 0){
+            while ((length = inputStream.read(buffer)) > 0) {
                 outputStream.write(buffer, 0, length);
             }
 
-            outputStream.flush();
-            outputStream.close();
             inputStream.close();
+            outputStream.close();
 
-            // Play
+            // Play the audio file
             MediaPlayer mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDataSource(musicFile.getPath());
+            mediaPlayer.setDataSource(this, audioFileUri);
             mediaPlayer.prepare();
             mediaPlayer.start();
-
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    private Uri createWriteRequest() {
+        ContentResolver contentResolver = getContentResolver();
+        Uri audioFileUri = null;
+
+        // Check if an existing audio file is pending for write
+        String[] projection = {MediaStore.Audio.Media._ID};
+        String selection = MediaStore.Audio.Media.IS_PENDING + " != ?";
+        String[] selectionArgs = {"1"};
+        Uri queryUri = MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+        Cursor existingAudioFiles = contentResolver.query(queryUri, projection, selection, selectionArgs, null);
+
+        try {
+            if (existingAudioFiles != null && existingAudioFiles.moveToFirst()) {
+                int idColumnIndex = existingAudioFiles.getColumnIndex(MediaStore.Audio.Media._ID);
+                if (idColumnIndex != -1) {
+                    long id = existingAudioFiles.getLong(idColumnIndex);
+                    audioFileUri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+                }
+            } else {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(MediaStore.Audio.Media.DISPLAY_NAME, "music.mp3");
+                contentValues.put(MediaStore.Audio.Media.RELATIVE_PATH, Environment.DIRECTORY_MUSIC);
+                contentValues.put(MediaStore.Audio.Media.MIME_TYPE, "audio/mpeg");
+                contentValues.put(MediaStore.Audio.Media.IS_PENDING, 1);
+                audioFileUri = contentResolver.insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, contentValues);
+            }
+        } finally {
+            if (existingAudioFiles != null) {
+                existingAudioFiles.close();
+            }
+        }
+
+        return audioFileUri;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -147,5 +193,6 @@ public class WeatherActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("onDestroy", "onDestroy");
     }
+
 
 }
