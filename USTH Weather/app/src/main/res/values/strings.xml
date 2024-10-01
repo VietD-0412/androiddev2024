@@ -1,5 +1,27 @@
 <resources>
     <string name="app_name">USTH Weather</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_empty">No Available Data</string>
+    <string name="header">USTH Weather</string>
+    <string name="weather_temp">12°C</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="cloudy_with_a_chance_of_meatballs">Cloudy Meatballs</string>
+    <string name="sunny">Sunny</string>
+    <string name="rainy">Rainy</string>
+    <string name="stormy">Stormy</string>
+    <string name="locate">Paris</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="temp1">24°C - 31°C</string>
+    <string name="temp2">24°C - 30°C</string>
+    <string name="temp3">22°C - 23°C</string>
+    <string name="temp4">22°C - 27°C</string>
+    <string name="temp5">22°C - 30°C</string>
+    <string name="temp6">24°C - 31°C</string>
+    <string name="temp7">26°C - 33°C</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

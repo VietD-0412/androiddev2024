@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="frag_empty_text">90px</dimen>
+    <dimen name="smol_pad">4px</dimen>
+    <dimen name="usth_header_height">140px</dimen>
+    <dimen name="margin_padding">45px</dimen>
+    <dimen name="margin_text_padding">85px</dimen>
+    <dimen name="weather_layout_height">600px</dimen>
+    <dimen name="weather_img_layout">500px</dimen>
+    <dimen name="weather_margin_top">185px</dimen>
+    <dimen name="weather_text_size">55px</dimen>
+    <dimen name="weaCond_marginTop">55px</dimen>
+    <dimen name="forecast_paddingTop">690px</dimen>
+    <dimen name="forecast_height">130px</dimen>
+    <dimen name="daytxt_width">0px</dimen>
+    <dimen name="daytxt_padding">38px</dimen>
+    <dimen name="dayimg_width">0px</dimen>
+    <dimen name="dayCond_width">370px</dimen>
+    <dimen name="dayCond_padLeft">30px</dimen>
+    <dimen name="dayCond_padTop">5px</dimen>
+</resources>

@@ -8,6 +8,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent" android:layout_height="@dimen/usth_header_height"
+        android:id="@+id/toolbar"
+        android:background="@color/dark_blue"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
