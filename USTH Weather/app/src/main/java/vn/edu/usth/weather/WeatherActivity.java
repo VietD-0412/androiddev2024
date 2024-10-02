@@ -29,6 +29,12 @@ import android.util.Log;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import android.media.MediaPlayer;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,6 +43,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 
 public class WeatherActivity extends AppCompatActivity {
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +68,18 @@ public class WeatherActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
+        // Initialize the Handler
+        handler = new Handler(getMainLooper());
+
+        // Button to simulate network request
+        Button simulateRequestButton = findViewById(R.id.simulateRequestButton);
+        simulateRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                simulateNetworkRequest();
+            }
+        });
+
         //extractAndPlayMusic(); not working properly anymore
 
         /*
@@ -78,6 +97,31 @@ public class WeatherActivity extends AppCompatActivity {
         */
         Log.i("onCreate", "onCreate");
     }
+
+        private void simulateNetworkRequest() {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // Simulating network delay
+                    try {
+                        Thread.sleep(2000); // Simulate a 2-second network delay
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Simulate fetched data
+                    final String simulatedResponse = "Weather data refreshed successfully!";
+
+                    // Use the Handler to post a Toast on the main thread
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(WeatherActivity.this, simulatedResponse, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }).start();
+        }
 
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -150,22 +194,22 @@ public class WeatherActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.weather_menu,menu);
+        getMenuInflater().inflate(R.menu.weather_menu, menu);
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId == R.id.action_refresh) {
-            Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (itemId == R.id.action_settings) {
-            startActivity(new Intent(this, PrefActivity.class));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int itemId = item.getItemId();
+//        if (itemId == R.id.action_refresh) {
+//            Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+//            return true;
+//        } else if (itemId == R.id.action_settings) {
+//            startActivity(new Intent(this, PrefActivity.class));
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     // Practical 2
     @Override
@@ -173,26 +217,28 @@ public class WeatherActivity extends AppCompatActivity {
         super.onStart();
         Log.i("onStart", "onStart");
     }
+
     @Override
     public void onResume() {
         super.onResume();
         Log.i("onResume", "onResume");
     }
+
     @Override
     public void onPause() {
         super.onPause();
         Log.i("onPause", "onPause");
     }
+
     @Override
     public void onStop() {
         super.onStop();
         Log.i("onStop", "onStop");
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.i("onDestroy", "onDestroy");
     }
-
-
 }

@@ -9,7 +9,8 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent" android:layout_height="@dimen/usth_header_height"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/usth_header_height"
         android:id="@+id/toolbar"
         android:background="@color/dark_blue"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
@@ -27,7 +28,15 @@
     <fragment
         android:id="@+id/fragment_weather_and_forecast"
         android:name="vn.edu.usth.weather.WeatherAndForecastFragment"
-        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
+    <Button
+        android:id="@+id/simulateRequestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simulate Network Request"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
